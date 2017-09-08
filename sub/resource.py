@@ -26,10 +26,10 @@ class Resource(object):
 	def get_time_left(self):
 		time = 0
 		for user in self.users:
-			time += user.get_time_of_resource(self)
+			time += user.get_time()
 		return time
 
 	def next_user(self):
 		if self.user_idx < len(self.users):
-			if self.users[self.user_idx].get_time_left() <= 0:
+			if self.users[self.user_idx].get_time() <= 0:
 				self.user_idx += 1
