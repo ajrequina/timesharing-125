@@ -20,11 +20,9 @@ class Main(tk.Tk):
 
 	def __set_users(self, num):
 		self.__users = []
-		user_indices = list(range(0, 30))
+		user_indices = list(range(0, num))
 		for curr in user_indices:
 			res_index = random.randint(0, len(self.__resources) - 1)
-			print(res_index)
-			print(len(self.__resources))
 			time = random.randint(1, 31)
 			user = User("user" + str(curr + 1), self.__resources[res_index], time)
 			self.__users.append(user)
